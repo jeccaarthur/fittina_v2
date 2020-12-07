@@ -7,5 +7,7 @@ namespace FitTinaV2.Repositories
     public interface IUserRepository
     {
         IQueryable<User> Users { get; }
+        void AddUser(User user);
+        User GetUserByName(string name);
     }
 }

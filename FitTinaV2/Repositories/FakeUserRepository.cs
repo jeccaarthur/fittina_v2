@@ -7,7 +7,8 @@ namespace FitTinaV2.Repositories
 {
     public class FakeUserRepository : IUserRepository
     {
-        private List<User> users = new List<User>();
+        List<User> users = new List<User>();
+
 
         public IQueryable<User> Users
         {
@@ -25,6 +26,7 @@ namespace FitTinaV2.Repositories
             // add user to list
             users.Add(user);
         }
+
 
         public User GetUserByName(string name)
         {

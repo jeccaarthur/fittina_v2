@@ -1,3 +1,76 @@
-﻿@{
+﻿@model CreateProfileVM
+
+@{
     ViewData["Title"] = "Create Profile";
 }
+
+<div class="text-center">
+    <h1 class="display-4">Create a Profile</h1>
+</div>
+
+<!-- FORM -->
+<div class="container">
+    <div class="form-container mx-auto">
+        <div class="card-body">
+            <form method="post" class="p-5">
+                <div class="form-group form-card p-5">
+                    <div class="row p-3">
+                        <label for="name" asp-for="Name">Your Name:</label>
+                        <input id="name" class="form-control" asp-for="Name" />
+                    </div>
+                    <br />
+
+                    <div class="row p-3">
+                        <label for="age" asp-for="Age">Your Age:</label>
+                        <input id="age" class="form-control" asp-for="Age" />
+                    </div>
+                    <br />
+
+                    <div class="row p-3 input-group">
+                        <div class="input-group-prepend">
+                            @*<label for="height" asp-for="Height">Your Height:</label>*@
+                            <span class="input-group-text" id="height">Your Height:</span>
+                        </div>
+                        <input id="height" placeholder="Feet" class="form-control" asp-for="Feet" />
+                        <input id="height" placeholder="Inches" class="form-control" asp-for="Inches" />
+                    </div>
+                    <br />
+
+                    <div class="row p-3">
+                        <label for="weight" asp-for="Weight">Current Weight:</label>
+                        <input id="weight" class="form-control" asp-for="Weight" />
+                    </div>
+                    <br />
+
+                    <div class="row p-3">
+                        <label for="goal" asp-for="FitnessGoal">Your Fitness Goal:</label>
+                        <textarea id="goal" class="form-control" asp-for="FitnessGoal"></textarea>
+                    </div>
+                    <br>
+
+                    <div class="row p-3">
+                        Your Equipment Preference:
+                    </div>
+                    <div class="ml-4">
+                        <label for="equipment" asp-for="EquipmentPref">
+                            <input type="radio" value="No Equipment" id="equipment" class="input-control" asp-for="EquipmentPref" />
+                            No Equipment
+                        </label>
+                        <br />
+                        <label for="equipment" asp-for="EquipmentPref">
+                            <input type="radio" value="Dumbbells" id="equipment" class="input-control" asp-for="EquipmentPref">
+                            Dumbbells
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <div class="row text-center">
+                        <button type="submit" class="btn btn-lg btn-success mx-auto px-5">Create Profile</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END FORM -->

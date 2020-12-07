@@ -2,18 +2,55 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FitTinaV2.Models;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace FitTinaV2.Controllers
 {
     public class WorkoutController : Controller
     {
-        // GET: /<controller>/
         public IActionResult Index()
         {
             return View();
         }
+
+
+        public IActionResult Build()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Build(BuildVM build)
+        {
+            return View(build);
+        }
+
+
+        public IActionResult Library()
+        {
+            return View();
+        }
+
+
+        //[HttpPost]
+        //public IActionResult Library()
+        //{
+        //    return View();
+        //}
+
+
+        public IActionResult Help()
+        {
+            return View();
+        }
+
+
+        //[HttpPost]
+        //public IActionResult Help()
+        //{
+        //    return View();
+        //}
     }
 }

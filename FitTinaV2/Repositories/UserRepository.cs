@@ -8,10 +8,12 @@ namespace FitTinaV2.Repositories
     {
         private FitTinaDbContext context;
 
+
         public UserRepository(FitTinaDbContext c)
         {
             context = c;
         }
+
 
         public IQueryable<User> Users
         {
@@ -21,11 +23,13 @@ namespace FitTinaV2.Repositories
             }
         }
 
+
         public void AddUser(User user)
         {
             context.Users.Add(user);
             context.SaveChanges();
         }
+
 
         public User GetUserByName(string name)
         {

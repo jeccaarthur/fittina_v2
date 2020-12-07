@@ -65,5 +65,47 @@ namespace FitTinaTests
             var userFromDb = fakeRepo.GetUserByName(user.Name);
             Assert.Equal("Test Name", userFromDb.Name);
         }
+
+
+        [Fact]
+        // test getting user for profile view
+        public void TestGetUserProfile()
+        {
+            // arrange
+            var fakeRepo = new FakeUserRepository();
+            var controller = new UserController(fakeRepo);
+            var user = new User()
+            {
+                Name = "Test Name",
+                Age = 30,
+                Feet = 5,
+                Inches = 4,
+                Weight = 150,
+                FitnessGoal = "Test goal",
+                EquipmentPref = "Dumbbells"
+            };
+
+            // act
+            controller.CreateProfile(user);
+            controller.Profile(user);
+
+            // assert
+            var userFromDb = fakeRepo.GetUserByName(user.Name);
+
+            // check height properties
+            Assert.Equal(5, user.Feet);
+            Assert.Equal(4, user.Inches);
+            Assert.Equal(64, user.Height);
+            Assert.Equal(userFromDb.Feet, user.Feet);
+            Assert.Equal(userFromDb.Inches, user.Inches);
+            Assert.Equal(userFromDb.Height, user.Height);
+
+            // check name, age, weight, fitnessgoal, equipmentpref
+            Assert.Equal(userFromDb.Name, user.Name);
+            Assert.Equal(userFromDb.Age, user.Age);
+            Assert.Equal(userFromDb.Weight, user.Weight);
+            Assert.Equal(userFromDb.FitnessGoal, user.FitnessGoal);
+            Assert.Equal(userFromDb.EquipmentPref, user.EquipmentPref);
+        }
     }
 }

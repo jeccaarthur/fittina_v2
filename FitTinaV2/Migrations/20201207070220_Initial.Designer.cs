@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitTinaV2.Migrations
 {
     [DbContext(typeof(FitTinaDbContext))]
-    [Migration("20201207064408_Initial")]
+    [Migration("20201207070220_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace FitTinaV2.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.9");
 
-            modelBuilder.Entity("FitTina.Models.Exercise", b =>
+            modelBuilder.Entity("FitTinaV2.Models.Exercise", b =>
                 {
                     b.Property<int>("ExerciseID")
                         .ValueGeneratedOnAdd()
@@ -939,7 +939,7 @@ namespace FitTinaV2.Migrations
                         });
                 });
 
-            modelBuilder.Entity("FitTina.Models.User", b =>
+            modelBuilder.Entity("FitTinaV2.Models.User", b =>
                 {
                     b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
@@ -1028,31 +1028,31 @@ namespace FitTinaV2.Migrations
 
             modelBuilder.Entity("FitTinaV2.Models.Workout", b =>
                 {
-                    b.HasOne("FitTina.Models.Exercise", "Exercise1")
+                    b.HasOne("FitTinaV2.Models.Exercise", "Exercise1")
                         .WithMany()
                         .HasForeignKey("Exercise1ExerciseID");
 
-                    b.HasOne("FitTina.Models.Exercise", "Exercise2")
+                    b.HasOne("FitTinaV2.Models.Exercise", "Exercise2")
                         .WithMany()
                         .HasForeignKey("Exercise2ExerciseID");
 
-                    b.HasOne("FitTina.Models.Exercise", "Exercise3")
+                    b.HasOne("FitTinaV2.Models.Exercise", "Exercise3")
                         .WithMany()
                         .HasForeignKey("Exercise3ExerciseID");
 
-                    b.HasOne("FitTina.Models.Exercise", "Exercise4")
+                    b.HasOne("FitTinaV2.Models.Exercise", "Exercise4")
                         .WithMany()
                         .HasForeignKey("Exercise4ExerciseID");
 
-                    b.HasOne("FitTina.Models.Exercise", "Exercise5")
+                    b.HasOne("FitTinaV2.Models.Exercise", "Exercise5")
                         .WithMany()
                         .HasForeignKey("Exercise5ExerciseID");
 
-                    b.HasOne("FitTina.Models.Exercise", "Exercise6")
+                    b.HasOne("FitTinaV2.Models.Exercise", "Exercise6")
                         .WithMany()
                         .HasForeignKey("Exercise6ExerciseID");
 
-                    b.HasOne("FitTina.Models.User", "User")
+                    b.HasOne("FitTinaV2.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)

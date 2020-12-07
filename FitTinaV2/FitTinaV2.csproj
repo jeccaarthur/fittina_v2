@@ -17,5 +17,7 @@
   <ItemGroup>
     <Folder Include="Views\Workout\" />
     <Folder Include="Views\User\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>

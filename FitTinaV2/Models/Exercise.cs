@@ -14,9 +14,5 @@ namespace FitTina.Models
         public string Type { get; set; }
         public string EquipmentRequired { get; set; }
         public string VideoUrl { get; set; }
-
-        [ForeignKey("Workout")]
-        public int WorkoutID { get; set; }
-        public Workout Workout { get; set; }
     }
 }

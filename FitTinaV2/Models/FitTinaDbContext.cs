@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FitTina.Models;
+using FitTinaV2.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FitTinaV2.Models

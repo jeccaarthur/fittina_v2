@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using FitTinaV2.Models;
 
-namespace FitTina.Models
+namespace FitTinaV2.Models
 {
     public class Exercise
     {

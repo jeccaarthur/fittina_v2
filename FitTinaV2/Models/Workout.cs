@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using FitTina.Models;
+using FitTinaV2.Models;
 
 namespace FitTinaV2.Models
 {

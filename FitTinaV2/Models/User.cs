@@ -7,16 +7,12 @@ namespace FitTinaV2.Models
 {
     public class User
     {
-        [NotMapped]
-        public int Feet;
-
-        [NotMapped]
-        public int Inches;
-
         public int UserID { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
         public int Height { get; set; }
+        public int Feet { get; set; }
+        public int Inches { get; set; }
         public int Weight { get; set; }
         public string FitnessGoal { get; set; }
         public string EquipmentPref { get; set; }
@@ -28,6 +24,7 @@ namespace FitTinaV2.Models
             return totalInches;
         }
 
+        /*
         public int TotalHeightToFeet(int height)
         {
             int feet = height / 12;
@@ -35,11 +32,12 @@ namespace FitTinaV2.Models
             return feet;
         }
 
-        public int TotalHeightToRemainingInches(int height)
+        public int .TotalHeightToRemainingInches(int height)
         {
             int inches = height % 12;
 
             return inches;
         }
+        */
     }
 }

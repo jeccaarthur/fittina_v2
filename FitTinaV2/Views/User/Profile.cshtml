@@ -1,6 +1,36 @@
-﻿@model User 
+﻿@model User
 
 @{
     ViewData["Title"] = "Profile";
 }
 
+
+
+@* USER INPUT *@
+
+@if (Model == null)
+{
+    <div class="container text-center">
+        <form method="post">
+            <div class="row p-3">
+                <label for="name" asp-for="Name">Enter your name to find your profile:</label>
+                <input id="name" class="form-control" asp-for="Name" />
+                <button type="submit" class="btn btn-lg btn-success mx-auto px-5">Submit</button>
+            </div>
+        </form>
+    </div>
+}
+@* OUTPUT *@
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">My Profile</h1>
+    </div>
+
+    <div class="row p-2">Name: @Model.Name</div>
+    <div class="row p-2">Age: @Model.Age</div>
+    <div class="row p-2">Height: @Model.Feet' @Model.Inches"</div>
+    <div class="row p-2">Current Weight: @Model.Weight</div>
+    <div class="row p-2">Fitness Goal: @Model.FitnessGoal</div>
+    <div class="row p-2">Equipment Preference: @Model.EquipmentPref</div>
+};

@@ -11,7 +11,7 @@ namespace FitTinaTests
     {
         [Fact]
         // test adding new user
-        public void AddUserTest()
+        public void TestAddUser()
         {
             // arrange
             var fakeRepo = new FakeUserRepository();

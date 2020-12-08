@@ -4,11 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using FitTinaV2.Models;
 using Microsoft.AspNetCore.Mvc;
+using FitTinaV2.Repositories;
 
 namespace FitTinaV2.Controllers
 {
     public class WorkoutController : Controller
     {
+        IWorkoutRepository repo;
+
+
+        public WorkoutController(IWorkoutRepository r)
+        {
+            repo = r;
+        }
+
+
         public IActionResult Index()
         {
             return View();
@@ -22,9 +32,15 @@ namespace FitTinaV2.Controllers
 
 
         [HttpPost]
-        public IActionResult Build(BuildVM build)
+        public IActionResult Build(Workout workout)
         {
-            return View(build);
+            // call method to set workout properties
+            repo.BuildWorkout(workout);
+
+            // add workout to db
+            repo.AddWorkout(workout);
+
+            return View(workout);
         }
 
 

@@ -49,5 +49,15 @@ namespace FitTinaV2.Controllers
         {
             return View();
         }
+
+
+        [HttpPost]
+        public IActionResult Profile(User user)
+        {
+            // take input name and get user from DB
+            repo.GetUserByName(user.Name);
+
+            return View(user);
+        }
     }
 }

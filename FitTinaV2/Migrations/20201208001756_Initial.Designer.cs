@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitTinaV2.Migrations
 {
     [DbContext(typeof(FitTinaDbContext))]
-    [Migration("20201207070220_Initial")]
+    [Migration("20201208001756_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -951,10 +951,16 @@ namespace FitTinaV2.Migrations
                     b.Property<string>("EquipmentPref")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Feet")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("FitnessGoal")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Height")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Inches")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")

@@ -949,10 +949,16 @@ namespace FitTinaV2.Migrations
                     b.Property<string>("EquipmentPref")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Feet")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("FitnessGoal")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Height")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Inches")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")

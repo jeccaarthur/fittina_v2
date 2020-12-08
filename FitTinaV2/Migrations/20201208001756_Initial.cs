@@ -32,6 +32,8 @@ namespace FitTinaV2.Migrations
                     Name = table.Column<string>(nullable: true),
                     Age = table.Column<int>(nullable: false),
                     Height = table.Column<int>(nullable: false),
+                    Feet = table.Column<int>(nullable: false),
+                    Inches = table.Column<int>(nullable: false),
                     Weight = table.Column<int>(nullable: false),
                     FitnessGoal = table.Column<string>(nullable: true),
                     EquipmentPref = table.Column<string>(nullable: true)

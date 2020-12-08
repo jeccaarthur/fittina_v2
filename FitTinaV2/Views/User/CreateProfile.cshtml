@@ -26,14 +26,34 @@
                     </div>
                     <br />
 
-                    <div class="row p-3 input-group">
-                        <div class="input-group-prepend">
-                            @*<label for="height" asp-for="Height">Your Height:</label>*@
-                            <span class="input-group-text" id="height">Your Height:</span>
-                        </div>
-                        <input id="height" placeholder="Feet" class="form-control" asp-for="Feet" />
-                        <input id="height" placeholder="Inches" class="form-control" asp-for="Inches" />
+                    @* height - old *@
+                    <!--<div class="row p-3 input-group">
+    <div class="input-group-prepend">-->
+                    @*<label for="height" asp-for="Height">Your Height:</label>*@
+                    <!--<span class="input-group-text" id="height">Your Height:</span>
+        </div>
+        <label for="feet" asp-for="Feet"></label>
+        <input id="feet" placeholder="Feet" class="form-control" asp-for="Feet" />
+
+        <label for="inches" asp-for="Inches"></label>
+        <input id="inches" placeholder="Inches" class="form-control" asp-for="Inches" />
+    </div>-->
+
+
+                    <div class="row p-3">
+                        Your Height:
                     </div>
+                    <div class="row p-1">
+                        <label for="feet" asp-for="Feet">Feet:</label>
+                        <input id="feet" class="form-control" asp-for="Feet" />
+                    </div>
+                    <div class="row p-1">
+                        <label for="inches" asp-for="Inches">Inches:</label>
+                        <input id="inches" class="form-control" asp-for="Inches" />
+                    </div>
+
+
+
                     <br />
 
                     <div class="row p-3">

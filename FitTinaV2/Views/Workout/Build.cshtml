@@ -1,3 +1,148 @@
-﻿@{
+﻿@model Workout
+
+@{
     ViewData["Title"] = "Build Workout";
+}
+
+
+@* if workout hasn't been built yet, display build form *@
+@if (Model == null)
+{
+    <div class="text-center">
+        <h1 class="display-4">Build a Workout</h1>
+    </div>
+
+    <!-- FORM -->
+    <div class="container">
+        <div class="form-container mx-auto">
+            <div class="card-body">
+                <form method="post" class="p-5">
+                    <div class="form-group form-card p-5">
+                        <div class="row p-3">
+                            Effort Level:
+                        </div>
+                        <div class="ml-4">
+                            <label for="effort" asp-for="Effort">
+                                <input type="radio" value="easy" id="effort" class="input-control" asp-for="Effort" />
+                                Easy
+                            </label>
+                            <br />
+                            <label for="effort" asp-for="Effort">
+                                <input type="radio" value="medium" id="effort" class="input-control" asp-for="Effort">
+                                Medium
+                            </label>
+                            <br />
+                            <label for="effort" asp-for="Effort">
+                                <input type="radio" value="challenging" id="effort" class="input-control" asp-for="Effort">
+                                Challenging
+                            </label>
+                        </div>
+
+                        @*<div class="row p-3">
+                            Select Duration:
+                        </div>
+                        <div class="ml-4">
+                            <label for="duration" asp-for="Duration">
+                                <input type="radio" value="15" id="duration" class="input-control" asp-for="Duration" />
+                                15 minutes
+                            </label>
+                            <br />
+                            <label for="duration" asp-for="Duration">
+                                <input type="radio" value="30" id="duration" class="input-control" asp-for="Duration">
+                                30 minutes
+                            </label>
+                            <br />
+                            <label for="duration" asp-for="Duration">
+                                <input type="radio" value="45" id="duration" class="input-control" asp-for="Duration">
+                                45 minutes
+                            </label>
+                        </div>*@
+
+                        @*<div class="row p-3">
+                            Include Cardio:
+                        </div>
+                        <div class="ml-4">
+                            <label for="cardio" asp-for="Cardio">
+                                <input type="radio" value="true" id="cardio" class="input-control" asp-for="Cardio" />
+                                Yes
+                            </label>
+                            <br />
+                            <label for="cardio" asp-for="Cardio">
+                                <input type="radio" value="false" id="cardio" class="input-control" asp-for="Cardio">
+                                No
+                            </label>
+                        </div>*@
+
+                        <br>
+
+                        <div class="row p-3">
+                            <label for="userName" asp-for="UserName">Your Name:</label>
+                            <input id="userName" class="form-control" asp-for="UserName" />
+                        </div>
+
+                        <div class="row p-3">
+                            <label for="workoutName" asp-for="Name">Workout Name:</label>
+                            <input id="workoutName" class="form-control" asp-for="Name" />
+                        </div>
+
+                        <div class="row text-center">
+                            <button type="submit" class="btn btn-lg btn-success mx-auto px-5">Build Workout</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END FORM -->
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Your New Workout</h1>
+    </div>
+
+    // display exercises with option to replace each
+<div class="container">
+    <div class="exercise p-5">
+        @Model.Exercise1.Name <br />
+        Sets: @Model.Sets <br />
+        Reps: @Model.Reps <br />
+        LINK TO VIDEO
+    </div>
+
+    <div class="exercise p-5">
+        @Model.Exercise2.Name <br />
+        Sets: @Model.Sets <br />
+        Reps: @Model.Reps <br />
+        LINK TO VIDEO
+    </div>
+
+    <div class="exercise p-5">
+        @Model.Exercise3.Name <br />
+        Sets: @Model.Sets <br />
+        Reps: @Model.Reps <br />
+        LINK TO VIDEO
+    </div>
+
+    <div class="exercise p-5">
+        @Model.Exercise4.Name <br />
+        Sets: @Model.Sets <br />
+        Reps: @Model.Reps <br />
+        LINK TO VIDEO
+    </div>
+
+    <div class="exercise p-5">
+        @Model.Exercise5.Name <br />
+        Sets: @Model.Sets <br />
+        Reps: @Model.Reps <br />
+        LINK TO VIDEO
+    </div>
+
+    <div class="exercise p-5">
+        @Model.Exercise6.Name <br />
+        Sets: @Model.Sets <br />
+        Reps: @Model.Reps <br />
+        LINK TO VIDEO
+    </div>
+</div>
 }

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Runtime.InteropServices;
+using FitTinaV2.Repositories;
 
 namespace FitTinaV2
 {
@@ -41,8 +42,8 @@ namespace FitTinaV2
             }
 
             // injects repository into any controller that has it specified in its constructor
-            // services.AddTransient<IUserRepository, UserRepository>();
-            // services.AddTransient<IWorkoutRepository, WorkoutRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IWorkoutRepository, WorkoutRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,8 +9,10 @@ namespace FitTinaV2.Repositories
     {
         IQueryable<Workout> Workouts { get; }
         IQueryable<Exercise> Exercises { get; }
+        IQueryable<User> Users { get; }
 
         // workout methods
+        Workout BuildWorkout(Workout workout);
         void AddWorkout(Workout workout);
         List<Workout> GetWorkoutsByUserName(string name);
 

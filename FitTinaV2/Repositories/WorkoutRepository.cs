@@ -41,6 +41,40 @@ namespace FitTinaV2.Repositories
         }
 
 
+        public IQueryable<User> Users
+        {
+            get
+            {
+                return context.Users;
+            }
+        }
+
+
+        // takes workout and sets properties
+        public Workout BuildWorkout(Workout workout)
+        {
+            // convert effort to sets and reps
+            workout.Sets = workout.GetSets(workout.Effort);
+            workout.Reps = workout.GetReps(workout.Effort);
+
+            // get exercises
+            workout.Exercise1 = GetRandomExercise();
+            workout.Exercise2 = GetRandomExercise();
+            workout.Exercise3 = GetRandomExercise();
+            workout.Exercise4 = GetRandomExercise();
+            workout.Exercise5 = GetRandomExercise();
+            workout.Exercise6 = GetRandomExercise();
+
+            // get date
+            workout.DateCreated = DateTime.Today;
+
+            // get associated user
+            workout.User = context.Users.Where(u => u.Name == workout.UserName).SingleOrDefault();
+
+            return workout;
+        }
+
+
         public void AddWorkout(Workout workout)
         {
             context.Workouts.Add(workout);

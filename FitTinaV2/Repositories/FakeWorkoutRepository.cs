@@ -9,6 +9,7 @@ namespace FitTinaV2.Repositories
     {
         private List<Workout> workouts = new List<Workout>();
         private List<Exercise> exercises = new List<Exercise>();
+        private List<User> users = new List<User>();
         Random rnd = new Random();
 
 
@@ -27,6 +28,39 @@ namespace FitTinaV2.Repositories
             {
                 return exercises.AsQueryable<Exercise>();
             }
+        }
+
+
+        public IQueryable<User> Users
+        {
+            get
+            {
+                return users.AsQueryable<User>();
+            }
+        }
+
+
+        public Workout BuildWorkout(Workout workout)
+        {
+            // convert effort to sets and reps
+            workout.Sets = workout.GetSets(workout.Effort);
+            workout.Reps = workout.GetReps(workout.Effort);
+
+            // get exercises
+            workout.Exercise1 = GetRandomExercise();
+            workout.Exercise2 = GetRandomExercise();
+            workout.Exercise3 = GetRandomExercise();
+            workout.Exercise4 = GetRandomExercise();
+            workout.Exercise5 = GetRandomExercise();
+            workout.Exercise6 = GetRandomExercise();
+
+            // get date
+            workout.DateCreated = DateTime.Today;
+
+            // get associated user
+            workout.User = users.Where(u => u.Name == workout.UserName).SingleOrDefault();
+
+            return workout;
         }
 
 
@@ -60,7 +94,8 @@ namespace FitTinaV2.Repositories
 
         public Exercise GetRandomExercise()
         {
-            int num = rnd.Next(1, Exercises.Count());
+            int max = exercises.Count;
+            int num = rnd.Next(1, max);
 
             Exercise exercise = new Exercise();
             exercise = exercises.Find(e => e.ExerciseID == num);

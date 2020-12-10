@@ -33,9 +33,7 @@ namespace FitTinaV2.Repositories
 
         public User GetUserByName(string name)
         {
-            User user = context.Users.Where(u => u.Name == name).SingleOrDefault();
-
-            return user;
+            return context.Users.Where(u => u.Name == name).SingleOrDefault();
         }
     }
 }

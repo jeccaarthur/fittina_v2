@@ -5,32 +5,71 @@
 }
 
 
-
-@* USER INPUT *@
-
+@*USER INPUT*@
 @if (Model == null)
 {
+    <div class="text-center">
+        <h1 class="display-4">View Your Profile</h1>
+        <hr />
+    </div>
+    <br />
     <div class="container text-center">
-        <form method="post">
+        <form method="post" class="name-search">
+
             <div class="row p-3">
                 <label for="name" asp-for="Name">Enter your name to find your profile:</label>
                 <input id="name" class="form-control" asp-for="Name" />
-                <button type="submit" class="btn btn-lg btn-success mx-auto px-5">Submit</button>
             </div>
+
+            <div class="row p-3">
+                <button type="submit" class="btn btn-lg btn-success mx-auto px-5">Get My Profile</button>
+            </div>
+
         </form>
     </div>
 }
-@* OUTPUT *@
+@*OUTPUT*@
 else
 {
     <div class="text-center">
-        <h1 class="display-4">My Profile</h1>
+        <h1 class="display-4">@Model.Name's Profile</h1>
+        <hr />
     </div>
 
-    <div class="row p-2">Name: @Model.Name</div>
-    <div class="row p-2">Age: @Model.Age</div>
-    <div class="row p-2">Height: @Model.Feet' @Model.Inches"</div>
-    <div class="row p-2">Current Weight: @Model.Weight</div>
-    <div class="row p-2">Fitness Goal: @Model.FitnessGoal</div>
-    <div class="row p-2">Equipment Preference: @Model.EquipmentPref</div>
-};
+    <div class="container">
+        <div class="card-outer">
+            <div class="card-inner">
+                <div class="profile-tina">
+                    <img src="~/images/tina-t.gif" alt="tina" height="350" />
+                </div>
+
+                <div class="user-props">
+                    <div class="row p-2">
+                        <span><strong>Name:</strong><br />@Model.Name</span>
+                    </div>
+
+                    <div class="row p-2">
+                        <span><strong>Age:</strong><br />@Model.Age</span>
+                    </div>
+
+                    <div class="row p-2">
+                        <span><strong>Height:</strong><br />@Model.Feet' @Model.Inches"</span>
+                    </div>
+
+                    <div class="row p-2">
+                        <span><strong>Current Weight:</strong><br />@Model.Weight</span>
+                    </div>
+
+                    <div class="row p-2">
+                        <span><strong>Equipment Preference:</strong><br />@Model.EquipmentPref</span>
+                    </div>
+
+                    <div class="row p-2">
+                        <span><strong>Fitness Goal:</strong><br />@Model.FitnessGoal</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

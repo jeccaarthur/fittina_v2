@@ -1,3 +1,38 @@
-﻿@{
+﻿@model Exercise
+
+@{
     ViewData["Title"] = "Get Help";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Get Help with a Workout</h1>
+    <hr />
+</div>
+<br />
+
+<div class="container text-center">
+    <form method="post" class="name-search">
+
+        <div class="row p-3">
+            <label for="name" class="control-label">Search the name of an exercise to see a demo:</label>
+            <input name="name" class="form-control" />
+        </div>
+
+        <div class="row p-3">
+            <button type="submit" class="btn btn-lg btn-success mx-auto px-5">Get Exercise</button>
+        </div>
+    </form>
+</div>
+
+
+
+@if (@Model != null)
+{
+    <br />
+    <br />
+    <br />
+    <div class="container text-center">
+        <iframe width="560" height="315" src="@Model.VideoUrl"></iframe>
+    </div>
 }

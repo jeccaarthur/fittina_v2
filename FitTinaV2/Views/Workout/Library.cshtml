@@ -1,3 +1,115 @@
-﻿@{
+﻿@model List<Workout>
+
+@{
     ViewData["Title"] = "Workout Library";
+}
+
+
+
+
+@if (@Model.Count == 0)
+{
+    <div class="text-center">
+        <h1 class="display-4">Find Your Workouts</h1>
+        <hr />
+    </div>
+    <br />
+
+    <div class="container text-center">
+        <form method="post" class="name-search">
+
+            <div class="row p-3">
+                <label for="name" class="control-label">Enter your name below to view your saved workouts:</label>
+                <input name="name" class="form-control" />
+            </div>
+
+            <div class="row p-3">
+                <button type="submit" class="btn btn-lg btn-success mx-auto px-5">Get My Workouts</button>
+            </div>
+
+        </form>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">@Model[0].User.Name's Workouts</h1>
+        <hr />
+    </div>
+
+    @* OUTPUT *@
+    @foreach (Workout w in Model)
+    {
+        <div class="form-container">
+            <div class="card-outer">
+                <div class="card-inner">
+
+                    <div class="text-center">
+                        <h3>@w.Name</h3>
+                        <h5>Level: @w.Effort.ToUpper()</h5>
+                        <h6>Date Created: @w.DateCreated.ToShortDateString()</h6>
+                    </div>
+
+                    <hr class="ex-break" />
+
+                    <div class="container">
+
+                        <div class="exercise p-2">
+                            <strong>@w.Exercise1.Name</strong><br />
+                            Sets: @w.Sets<br />
+                            Reps: @w.Reps<br />
+                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise1.Name">Watch a demo</a>
+                        </div>
+
+                        <hr class="ex-break" />
+
+                        <div class="exercise p-2">
+                            <strong>@w.Exercise2.Name</strong><br />
+                            Sets: @w.Sets<br />
+                            Reps: @w.Reps<br />
+                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise2.Name">Watch a demo</a>
+                        </div>
+
+                        <hr class="ex-break" />
+
+                        <div class="exercise p-2">
+                            <strong>@w.Exercise3.Name</strong><br />
+                            Sets: @w.Sets<br />
+                            Reps: @w.Reps<br />
+                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise3.Name">Watch a demo</a>
+                        </div>
+
+                        <hr class="ex-break" />
+
+                        <div class="exercise p-2">
+                            <strong>@w.Exercise4.Name</strong><br />
+                            Sets: @w.Sets<br />
+                            Reps: @w.Reps<br />
+                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise4.Name">Watch a demo</a>
+                        </div>
+
+                        <hr class="ex-break" />
+
+                        <div class="exercise p-2">
+                            <strong>@w.Exercise5.Name</strong><br />
+                            Sets: @w.Sets<br />
+                            Reps: @w.Reps<br />
+                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise5.Name">Watch a demo</a>
+                        </div>
+
+                        <hr class="ex-break" />
+
+                        <div class="exercise p-2">
+                            <strong>@w.Exercise6.Name</strong><br />
+                            Sets: @w.Sets<br />
+                            Reps: @w.Reps<br />
+                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise6.Name">Watch a demo</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
 }

@@ -31,15 +31,15 @@ namespace FitTinaV2
             services.AddRazorPages()
             .AddRazorRuntimeCompilation();
 
-            // add if statement to support azure db
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
+            // to support azure db
+            //if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            //{
                 services.AddDbContext<FitTinaDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:AzureSQLServerConnection"]));
-            }
-            else
-            {
-                services.AddDbContext<FitTinaDbContext>(options => options.UseSqlite(Configuration["ConnectionStrings:SQLiteConnection"]));
-            }
+            //}
+            //else
+            //{
+            //    services.AddDbContext<FitTinaDbContext>(options => options.UseSqlite(Configuration["ConnectionStrings:SQLiteConnection"]));
+            //}
 
             // injects repository into any controller that has it specified in its constructor
             services.AddTransient<IUserRepository, UserRepository>();

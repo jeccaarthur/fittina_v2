@@ -27,6 +27,7 @@ namespace FitTinaV2.Controllers
 
         public IActionResult CreateProfile()
         {
+            ViewBag.Current = "CreateProfile";
             return View();
         }
 
@@ -35,6 +36,7 @@ namespace FitTinaV2.Controllers
         // adds a user
         public IActionResult CreateProfile(User user)
         {
+            ViewBag.Current = "CreateProfile";
             // convert feet / inches to height before saving to db
             user.Height = user.FeetInchesToTotalHeight(user.Feet, user.Inches);
 
@@ -47,15 +49,18 @@ namespace FitTinaV2.Controllers
 
         public IActionResult Profile()
         {
+            ViewBag.Current = "Profile";
             return View();
         }
 
 
         [HttpPost]
-        public IActionResult Profile(User user)
+        public IActionResult Profile(string name)
         {
+            ViewBag.Current = "Profile";
+
             // take input name and get user from DB
-            repo.GetUserByName(user.Name);
+            User user = repo.GetUserByName(name);
 
             return View(user);
         }

@@ -23,21 +23,5 @@ namespace FitTinaV2.Models
 
             return totalInches;
         }
-
-        /*
-        public int TotalHeightToFeet(int height)
-        {
-            int feet = height / 12;
-
-            return feet;
-        }
-
-        public int .TotalHeightToRemainingInches(int height)
-        {
-            int inches = height % 12;
-
-            return inches;
-        }
-        */
     }
 }

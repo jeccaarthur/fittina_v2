@@ -11,6 +11,8 @@ namespace FitTinaV2.Repositories
         IQueryable<Exercise> Exercises { get; }
         IQueryable<User> Users { get; }
 
+        User GetUserByName(string name);
+
         // workout methods
         Workout BuildWorkout(Workout workout);
         void AddWorkout(Workout workout);
@@ -20,5 +22,6 @@ namespace FitTinaV2.Repositories
         Exercise GetExerciseByID(int id);
         Exercise GetExerciseByName(string name);
         Exercise GetRandomExercise();
+        Exercise GetBodyweightExercise();
     }
 }

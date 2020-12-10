@@ -13,6 +13,7 @@ namespace FitTinaV2.Repositories
         Random rnd = new Random();
 
 
+
         public IQueryable<Workout> Workouts
         {
             get
@@ -42,6 +43,9 @@ namespace FitTinaV2.Repositories
 
         public Workout BuildWorkout(Workout workout)
         {
+            // create fake exercise list to pull from for testing
+            exercises = FakeExerciseList();
+
             // convert effort to sets and reps
             workout.Sets = workout.GetSets(workout.Effort);
             workout.Reps = workout.GetReps(workout.Effort);
@@ -67,7 +71,7 @@ namespace FitTinaV2.Repositories
         public void AddWorkout(Workout workout)
         {
             // simulate ai pk
-            workout.WorkoutID = workouts.Count;
+            workout.WorkoutID = workouts.Count + 1;
 
             // add workout to list
             workouts.Add(workout);
@@ -76,40 +80,94 @@ namespace FitTinaV2.Repositories
 
         public Exercise GetExerciseByID(int id)
         {
-            Exercise exercise = new Exercise();
-            exercise = exercises.Find(e => e.ExerciseID == id);
-
-            return exercise;
+            return exercises.Find(e => e.ExerciseID == id);
         }
 
 
         public Exercise GetExerciseByName(string name)
         {
-            Exercise exercise = new Exercise();
-            exercise = exercises.Where(e => e.Name == name).SingleOrDefault();
-
-            return exercise;
+            return exercises.Where(e => e.Name == name).SingleOrDefault();
         }
 
 
         public Exercise GetRandomExercise()
         {
-            int max = exercises.Count;
+            int max = exercises.Count + 1;
             int num = rnd.Next(1, max);
 
-            Exercise exercise = new Exercise();
-            exercise = exercises.Find(e => e.ExerciseID == num);
-
-            return exercise;
+            return exercises.Find(e => e.ExerciseID == num);
         }
 
 
         public List<Workout> GetWorkoutsByUserName(string name)
         {
-            List<Workout> workoutList = new List<Workout>();
-            workoutList = workouts.Where(w => w.User.Name == name).ToList();
+            List<Workout> workoutList = workouts.Where(w => w.User.Name == name).ToList();
 
             return workoutList;
+        }
+
+        // add 6 fake exercises to list to test with
+        public List<Exercise> FakeExerciseList()
+        {
+            Exercise e1 = new Exercise();
+            e1.ExerciseID = 1;
+            e1.Name = "Test name 1";
+            e1.Type = "Test type";
+            e1.EquipmentRequired = "Test equipment";
+            e1.VideoUrl = "Test url";
+            exercises.Add(e1);
+
+            Exercise e2 = new Exercise();
+            e2.ExerciseID = 2;
+            e2.Name = "Test name 2";
+            e2.Type = "Test type";
+            e2.EquipmentRequired = "Test equipment";
+            e2.VideoUrl = "Test url";
+            exercises.Add(e2);
+
+            Exercise e3 = new Exercise();
+            e3.ExerciseID = 3;
+            e3.Name = "Test name 3";
+            e3.Type = "Test type";
+            e3.EquipmentRequired = "Test equipment";
+            e3.VideoUrl = "Test url";
+            exercises.Add(e3);
+
+            Exercise e4 = new Exercise();
+            e4.ExerciseID = 4;
+            e4.Name = "Test name 4";
+            e4.Type = "Test type";
+            e4.EquipmentRequired = "Test equipment";
+            e4.VideoUrl = "Test url";
+            exercises.Add(e4);
+
+            Exercise e5 = new Exercise();
+            e5.ExerciseID = 5;
+            e5.Name = "Test name 5";
+            e5.Type = "Test type";
+            e5.EquipmentRequired = "Test equipment";
+            e5.VideoUrl = "Test url";
+            exercises.Add(e5);
+
+            Exercise e6 = new Exercise();
+            e6.ExerciseID = 6;
+            e6.Name = "Test name 6";
+            e6.Type = "Test type";
+            e6.EquipmentRequired = "Test equipment";
+            e6.VideoUrl = "Test url";
+            exercises.Add(e6);
+
+            return exercises;
+        }
+
+        public User GetUserByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Exercise GetBodyweightExercise()
+        {
+            throw new NotImplementedException();
         }
     }
 }

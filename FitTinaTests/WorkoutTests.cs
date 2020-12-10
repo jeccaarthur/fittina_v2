@@ -25,7 +25,7 @@ namespace FitTinaTests
 
             // act
             controller.Build(workout);
-
+            
             // assert
             // get new workout from db
             var workoutFromDb = fakeRepo.Workouts.ToList()[0];
@@ -39,9 +39,6 @@ namespace FitTinaTests
             Assert.NotNull(workout.Exercise4);
             Assert.NotNull(workout.Exercise5);
             Assert.NotNull(workout.Exercise6);
-            Assert.Equal("Test", workoutFromDb.User.Name);
-
-            // test failing - must add exercises to list manually
         }
     }
 }

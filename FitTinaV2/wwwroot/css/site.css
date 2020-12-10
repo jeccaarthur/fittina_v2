@@ -37,9 +37,11 @@ html {
 
 .border-top {
   border-top: 1px solid #e5e5e5;
+  margin-left: 0px !important;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
+/*  margin-left: 0px !important;*/
 }
 
 .box-shadow {
@@ -51,7 +53,7 @@ button.accept-policy {
   line-height: inherit;
 }
 
-/* Sticky footer styles
+/* general styles
 -------------------------------------------------- */
 html {
   position: relative;
@@ -59,13 +61,216 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    margin-left: 250px;
+    margin-top: 5%;
+    background-color: #272A2B;
+    color: white;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /*line-height: 60px;*/ /* Vertically center the text there */
+    margin: 0 auto;
+    margin-left: -250px;
+    padding-top: 20px;
+    z-index: -1;
+}
+
+    .footer-inner {
+        margin-left: 250px;
+        line-height: 60px; /* Vertically center the text there */
+        text-align: center;
+    }
+
+    .footer-hr {
+        height: 1px;
+        background-color: #5C6266 !important;
+        background: #5C6266 !important;
+        width: 100% !important;
+    }
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+button {
+    background-color: #99DBFF !important;
+    border: 1px solid #787878 !important;
+    color: #555555 !important;
+    box-shadow: 0.5px 0.5px 8px #080808;
+}
+
+h1 {
+    text-shadow: 0px 1px 55px #080808;
+}
+
+hr {
+    width: 90% !important;
+    background-color: #CEE2FF !important;
+    /* fade */
+    border: 0;
+    height: 1px;
+    background: #9CF;
+    background-image: linear-gradient(to right, #223, #9CF, #223);
+}
+
+.form-button {
+    border: 1px solid #acacac !important;
+    box-shadow: 0px 1px 10px #acacac !important;
+    margin-top: 15px;
+}
+
+
+
+/* -------------- OUTPUT STYLING -------------- */
+.card-outer {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-top: 7% !important;
+    box-shadow: 0.5px 0.5px 10px #000000;
+}
+
+.card-inner {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    color: #555555;
+}
+
+
+
+
+/* -------------- NAME SEARCH -------------- */
+.name-search {
+    width: 50% !important;
+    margin: 0 auto;
+}
+
+
+
+
+/* -------------- NAVBAR -------------- */
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: -10px;
+    left: 0;
+    background-color: #191919 !important;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 0.5px 0.5px 10px #000000;
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #f0f0f0;
+        display: block;
+        transition: 0.3s;
+        font-size: 1.3em;
+    }
+
+        .active {
+            background-color: #99DBFF;
+            color: #555555 !important;
+        }
+
+        .sidenav a:hover {
+            color: #CEE2FF;
+        }
+
+.sidenav a:active {
+    background-color: #CEE2FF;
+    color: #415A80;
+}
+
+        .sidenav hr {
+            background-color: #CEE2FF;
+            z-index: 3;
+        }
+
+
+    .menu {
+        list-style: none;
+        margin-left: -30px;
+    }
+
+    ul.menu li {
+        margin-bottom: 15px;
+    }
+
+
+/* -------------- VIEW: PROFILE -------------- */
+.form-container {
+    width: 70% !important;
+    margin: 0 auto;
+}
+
+.profile-tina {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.user-props {
+    position: relative;
+    display: inline-block;
+    left: 10%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
+
+
+/* -------------- VIEW: PROFILE -------------- */
+.equipment {
+    width: max-content;
+    margin: 0 auto;
+}
+
+
+
+/* -------------- VIEW: BUILD -------------- */
+.effort {
+    width: max-content;
+    margin: 0 auto;
+}
+
+.exercise {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ex-break {
+    width: 100% !important;
+    /* fade */
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #9DF, #ccc);
+}
+
+
+
+/* -------------- VIEW: HELP -------------- */
+iframe {
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #000000;
 }

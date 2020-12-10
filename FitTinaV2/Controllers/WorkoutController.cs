@@ -27,6 +27,7 @@ namespace FitTinaV2.Controllers
 
         public IActionResult Build()
         {
+            ViewBag.Current = "Build";
             return View();
         }
 
@@ -34,6 +35,8 @@ namespace FitTinaV2.Controllers
         [HttpPost]
         public IActionResult Build(Workout workout)
         {
+            ViewBag.Current = "About";
+
             // call method to set workout properties
             repo.BuildWorkout(workout);
 
@@ -46,27 +49,34 @@ namespace FitTinaV2.Controllers
 
         public IActionResult Library()
         {
-            return View();
+            ViewBag.Current = "Library";
+            List<Workout> workouts = new List<Workout>();
+            return View(workouts);
         }
 
 
-        //[HttpPost]
-        //public IActionResult Library()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult Library(string name)
+        {
+            ViewBag.Current = "Library";
+            var workouts = repo.GetWorkoutsByUserName(name);
+            return View(workouts);
+        }
 
 
         public IActionResult Help()
         {
+            ViewBag.Current = "Help";
             return View();
         }
 
 
-        //[HttpPost]
-        //public IActionResult Help()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult Help(string name)
+        {
+            ViewBag.Current = "Help";
+            Exercise exercise = repo.GetExerciseByName(name);
+            return View(exercise);
+        }
     }
 }

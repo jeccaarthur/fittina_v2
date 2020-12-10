@@ -6,8 +6,6 @@ namespace FitTinaV2.Models
 {
     public class Workout
     {
-        public Workout() { }
-
         public int WorkoutID { get; set; }
         public string Name { get; set; }
         public DateTime DateCreated { get; set; }
@@ -19,8 +17,6 @@ namespace FitTinaV2.Models
         public Exercise Exercise4 { get; set; }
         public Exercise Exercise5 { get; set; }
         public Exercise Exercise6 { get; set; }
-
-        [NotMapped]
         public string Effort { get; set; }
 
         [ForeignKey("User")]

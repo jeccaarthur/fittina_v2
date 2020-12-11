@@ -267,6 +267,17 @@ hr {
     background-image: linear-gradient(to right, #ccc, #9DF, #ccc);
 }
 
+/* also used in library view */
+.demo {
+    font-weight: bold !important;
+    color: #7AAFCC !important;
+}
+
+    a.demo:hover {
+        cursor: pointer !important;
+        color: grey !important;
+    }
+
 
 
 /* -------------- VIEW: HELP -------------- */

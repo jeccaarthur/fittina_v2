@@ -58,7 +58,11 @@ else
                             <strong>@w.Exercise1.Name</strong><br />
                             Sets: @w.Sets<br />
                             Reps: @w.Reps<br />
-                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise1.Name">Watch a demo</a>
+
+                            <form method="post" asp-action="Help" id="ex1">
+                                <input type="hidden" name="name" value="@w.Exercise1.Name"/>
+                                <a class="demo" onclick="document.getElementById('ex1').submit(); return false;">Watch a Demo</a>
+                            </form>
                         </div>
 
                         <hr class="ex-break" />
@@ -67,7 +71,11 @@ else
                             <strong>@w.Exercise2.Name</strong><br />
                             Sets: @w.Sets<br />
                             Reps: @w.Reps<br />
-                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise2.Name">Watch a demo</a>
+
+                            <form method="post" asp-action="Help" id="ex2">
+                                <input type="hidden" name="name" value="@w.Exercise2.Name" />
+                                <a class="demo" onclick="document.getElementById('ex2').submit(); return false;">Watch a Demo</a>
+                            </form>
                         </div>
 
                         <hr class="ex-break" />
@@ -76,7 +84,11 @@ else
                             <strong>@w.Exercise3.Name</strong><br />
                             Sets: @w.Sets<br />
                             Reps: @w.Reps<br />
-                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise3.Name">Watch a demo</a>
+
+                            <form method="post" asp-action="Help" id="ex3">
+                                <input type="hidden" name="name" value="@w.Exercise3.Name" />
+                                <a class="demo" onclick="document.getElementById('ex3').submit(); return false;">Watch a Demo</a>
+                            </form>
                         </div>
 
                         <hr class="ex-break" />
@@ -85,7 +97,11 @@ else
                             <strong>@w.Exercise4.Name</strong><br />
                             Sets: @w.Sets<br />
                             Reps: @w.Reps<br />
-                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise4.Name">Watch a demo</a>
+
+                            <form method="post" asp-action="Help" id="ex4">
+                                <input type="hidden" name="name" value="@w.Exercise4.Name" />
+                                <a class="demo" onclick="document.getElementById('ex4').submit(); return false;">Watch a Demo</a>
+                            </form>
                         </div>
 
                         <hr class="ex-break" />
@@ -94,7 +110,11 @@ else
                             <strong>@w.Exercise5.Name</strong><br />
                             Sets: @w.Sets<br />
                             Reps: @w.Reps<br />
-                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise5.Name">Watch a demo</a>
+
+                            <form method="post" asp-action="Help" id="ex5">
+                                <input type="hidden" name="name" value="@w.Exercise5.Name" />
+                                <a class="demo" onclick="document.getElementById('ex5').submit(); return false;">Watch a Demo</a>
+                            </form>
                         </div>
 
                         <hr class="ex-break" />
@@ -103,7 +123,11 @@ else
                             <strong>@w.Exercise6.Name</strong><br />
                             Sets: @w.Sets<br />
                             Reps: @w.Reps<br />
-                            <a asp-controller="Workout" asp-action="Help" asp-route-name="@w.Exercise6.Name">Watch a demo</a>
+
+                            <form method="post" asp-action="Help" id="ex6">
+                                <input type="hidden" name="name" value="@w.Exercise6.Name" />
+                                <a class="demo" onclick="document.getElementById('ex6').submit(); return false;">Watch a Demo</a>
+                            </form>
                         </div>
 
                     </div>
